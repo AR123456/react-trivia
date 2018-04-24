@@ -1,18 +1,17 @@
-import React from "react";
-import Selection from "../components/Selection";
+const url =
+  "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple&encode=url3986";
 
-//   "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple&encode=url3986";
 //build API URL
 //build API url
-const url =
-  "https://opentdb.com/api.php?amount=10" +
-  "&category=" +
-  this.props.categorySelected +
-  "&difficulty=" +
-  (this.props.difficultySelected !== "any difficulty"
-    ? this.props.difficultySelected
-    : "") +
-  "&type=multiple&encode=url3986";
+// const url =
+//   "https://opentdb.com/api.php?amount=10" +
+//   "&category=" +
+//   this.props.categorySelected +
+//   "&difficulty=" +
+//   (this.props.difficultySelected !== "any difficulty"
+//     ? this.props.difficultySelected
+//     : "") +
+//   "&type=multiple&encode=url3986";
 
 const makeQuizObjs = json => {
   return json.results.map(question => {
