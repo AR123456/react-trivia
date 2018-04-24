@@ -36,8 +36,8 @@ const Welcome = props => {
         <p>Log in, pick your category and difficulty.</p>
         <p>
           <small>
-            You have <strong>60</strong> seconds to answer <strong>20</strong>{" "}
-            questions.
+            {/* You have <strong>60</strong> seconds to answer <strong>20</strong>{" "}
+            questions. */}
           </small>
         </p>
       </div>

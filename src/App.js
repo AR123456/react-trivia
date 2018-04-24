@@ -5,7 +5,7 @@ import quizClient from "./utils/quizClient";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "./App.css";
 import Welcome from "./components/Welcome";
-// import logo from "./components/bananadance.gif";
+import Selection from "./components/Selection";
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <Welcome />
+        <Selection />
         <div className="App-header">
           <h2>
             This on click will start the game , need to put the category and
