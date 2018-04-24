@@ -1,0 +1,28 @@
+.CenterScreen {
+  text-align: center;
+}
+
+.StartLogo {
+  animation: Start-logo-saturate infinite 12s linear;
+  max-width: 90vw;
+  margin-top: 2vh;
+}
+
+@keyframes Start-logo-saturate {
+ 0%,100% {filter: saturate(0); }
+  50% {filter: saturate(1); }
+}
+
+.ThreeGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;   
+}
+
+.UIblocks{
+    max-width: 200px;
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
