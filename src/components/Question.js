@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Choice from "./Choice";
-import Selection from "./Selection";
+// import Selection from "./Selection";
 const defaultState = {
   answered: false,
   selectedIndex: null

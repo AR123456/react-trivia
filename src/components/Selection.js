@@ -6,6 +6,8 @@ class Selection extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      categorySelected: null,
+      difficultySelected: null,
       quiz: {
         categories: {
           "Any Category": 0,
@@ -38,6 +40,14 @@ class Selection extends Component {
       }
     };
   }
+
+  handleCategorySelected = event => {
+    this.setState({ categorySelected: [event.target.value] });
+  };
+
+  handleDifficultySelected = event => {
+    this.setState({ difficultySelected: event.target.value });
+  };
 
   render() {
     return (

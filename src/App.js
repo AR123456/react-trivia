@@ -55,7 +55,7 @@ class App extends Component {
             difficulty selections above the start game. Start game makes the API
             call{" "}
           </h2>
-          <button className="btn btn-default" onClick={this.getNewQuiz}>
+          <button className="btn btn-default" onClick={this.Quiz}>
             Get New Quiz
           </button>
         </div>
