@@ -1,17 +1,6 @@
-const url =
-  "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple&encode=url3986";
-
-//build API URL
-//build API url
 // const url =
-//   "https://opentdb.com/api.php?amount=10" +
-//   "&category=" +
-//   this.props.categorySelected +
-//   "&difficulty=" +
-//   (this.props.difficultySelected !== "any difficulty"
-//     ? this.props.difficultySelected
-//     : "") +
-//   "&type=multiple&encode=url3986";
+//   "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple&encode=url3986";
+//build API url
 
 const makeQuizObjs = json => {
   return json.results.map(question => {
@@ -33,7 +22,14 @@ const makeQuizObjs = json => {
 };
 
 export default {
-  getQuizes: () => {
+  getQuizes: (id, difficulty) => {
+    const url =
+      "https://opentdb.com/api.php?amount=10" +
+      "&category=" +
+      id +
+      "&difficulty=" +
+      difficulty +
+      "&type=multiple&encode=url3986";
     return fetch(url)
       .then(res => res.json())
       .then(json => makeQuizObjs(json));

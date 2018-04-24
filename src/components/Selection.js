@@ -6,8 +6,6 @@ class Selection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      categorySelected: null,
-      difficultySelected: null,
       quiz: {
         categories: {
           "Any Category": 0,
@@ -36,18 +34,12 @@ class Selection extends Component {
           "Entertainment: Japanese Anime & Manga": 31,
           "Entertainment: Cartoon & Animations": 32
         },
-        difficulties: ["any difficulty", "easy", "medium", "hard"]
+        difficulties: ["any difficulty", "easy", "medium", "hard"],
+        quizCategoryID: 0,
+        quizDifficulty: "easy"
       }
     };
   }
-
-  handleCategorySelected = event => {
-    this.setState({ categorySelected: [event.target.value] });
-  };
-
-  handleDifficultySelected = event => {
-    this.setState({ difficultySelected: event.target.value });
-  };
 
   render() {
     return (
@@ -56,7 +48,7 @@ class Selection extends Component {
 
         <br />
         <br />
-        <select id="category" onChange={this.handleCategorySelected}>
+        <select id="category" onChange={this.props.handleCategorySelected}>
           <option value="" disabled selected>
             select category
           </option>
@@ -66,7 +58,7 @@ class Selection extends Component {
             </option>
           ))}
         </select>
-        <select id="difficulty" onChange={this.handleDifficultySelected}>
+        <select id="difficulty" onChange={this.props.handleDifficultySelected}>
           <option value="" disabled selected>
             select difficulty
           </option>

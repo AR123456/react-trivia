@@ -13,18 +13,24 @@ class App extends Component {
     this.state = {
       questions: [],
       currQuestion: 0,
-      score: 0
+      score: 0,
+      quizCategoryID: 0,
+      quizDifficulty: "easy"
     };
 
     this.handleClickNext = this.handleClickNext.bind(this);
     this.updateScore = this.updateScore.bind(this);
     this.getNewQuiz = this.getNewQuiz.bind(this);
+    this.handleDifficultySelected = this.handleDifficultySelected.bind(this);
+    this.handleCategorySelected = this.handleCategorySelected.bind(this);
   }
 
   getNewQuiz() {
-    quizClient.getQuizes().then(questions => {
-      this.setState({ questions: questions, score: 0, currQuestion: 0 });
-    });
+    quizClient
+      .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
+      .then(questions => {
+        this.setState({ questions: questions, score: 0, currQuestion: 0 });
+      });
   }
 
   componentDidMount() {
@@ -38,24 +44,38 @@ class App extends Component {
   updateScore(correct) {
     if (correct) this.setState({ score: this.state.score + 1 });
   }
+  handleCategorySelected(e) {
+    console.log("picked a cat", e.target.value);
+    this.setState({ quizCategoryID: e.target.value });
+  }
+  handleDifficultySelected(e) {
+    console.log("picked a difficulty", e.target.value);
+    this.setState({ quizDifficulty: e.target.value });
+  }
 
   render() {
+    console.log("this is the state", this.state);
+
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
+
     return (
       <div className="App">
         <Welcome />
-        <Selection />
+        <Selection
+          handleCategorySelected={this.handleCategorySelected}
+          handleDifficultySelected={this.handleDifficultySelected}
+        />
         <div className="App-header">
           <h2>
             This on click will start the game , need to put the category and
             difficulty selections above the start game. Start game makes the API
             call{" "}
           </h2>
-          <button className="btn btn-default" onClick={this.Quiz}>
+          <button className="btn btn-default" onClick={this.getNewQuiz}>
             Get New Quiz
           </button>
         </div>
