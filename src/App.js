@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       questions: [],
       currQuestion: 0,
+      secondsLeft: 5,
       score: 0,
       quizCategoryID: 0,
       quizDifficulty: "easy"
@@ -24,12 +25,22 @@ class App extends Component {
     this.handleDifficultySelected = this.handleDifficultySelected.bind(this);
     this.handleCategorySelected = this.handleCategorySelected.bind(this);
   }
+  tickSeconds = () => {
+    if (this.state.secondsLeft === 0) {
+      // this.handleEndQuiz();
+      this.handleClickNext();
+    } else {
+      this.setState({ secondsLeft: this.state.secondsLeft - 1 });
+    }
+  };
 
   getNewQuiz() {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
         this.setState({ questions: questions, score: 0, currQuestion: 0 });
+
+        setInterval(this.tickSeconds, 1000);
       });
   }
 
@@ -38,10 +49,14 @@ class App extends Component {
   }
 
   handleClickNext() {
+    //start the timer
+    // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
+    this.setState({ secondsLeft: 10 });
   }
 
   updateScore(correct) {
+    this.setState({ secondsLeft: 3 });
     if (correct) this.setState({ score: this.state.score + 1 });
   }
   handleCategorySelected(e) {
@@ -70,11 +85,8 @@ class App extends Component {
           handleDifficultySelected={this.handleDifficultySelected}
         />
         <div className="App-header">
-          <h2>
-            This on click will start the game , need to put the category and
-            difficulty selections above the start game. Start game makes the API
-            call{" "}
-          </h2>
+          <h2>Click "Get New Quiz" to start </h2>
+          <h2>{this.state.secondsLeft}</h2>
           <button className="btn btn-default" onClick={this.getNewQuiz}>
             Get New Quiz
           </button>
