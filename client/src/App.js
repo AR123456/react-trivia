@@ -5,6 +5,7 @@ import quizClient from "./utils/quizClient";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "./App.css";
 import Welcome from "./components/Welcome";
+import Footer from "./components/Footer";
 import Selection from "./components/Selection";
 
 class App extends Component {
@@ -16,7 +17,9 @@ class App extends Component {
       secondsLeft: 5,
       score: 0,
       quizCategoryID: 0,
-      quizDifficulty: "easy"
+      quizDifficulty: "easy",
+      ticker: "",
+      gameIsOver: false
     };
 
     this.handleClickNext = this.handleClickNext.bind(this);
@@ -24,9 +27,12 @@ class App extends Component {
     this.getNewQuiz = this.getNewQuiz.bind(this);
     this.handleDifficultySelected = this.handleDifficultySelected.bind(this);
     this.handleCategorySelected = this.handleCategorySelected.bind(this);
+    this.setGameOver = this.setGameOver.bind(this);
   }
   tickSeconds = () => {
     if (this.state.secondsLeft === 0) {
+      console.log("timer is at 0", this.state.secondsLeft);
+
       // this.handleEndQuiz();
       this.handleClickNext();
     } else {
@@ -38,9 +44,14 @@ class App extends Component {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
-        this.setState({ questions: questions, score: 0, currQuestion: 0 });
-
-        setInterval(this.tickSeconds, 1000);
+        let ticker = setInterval(this.tickSeconds, 1000);
+        this.setState({
+          questions: questions,
+          score: 0,
+          currQuestion: 0,
+          ticker: ticker,
+          gameIsOver: false
+        });
       });
   }
 
@@ -49,10 +60,12 @@ class App extends Component {
   }
 
   handleClickNext() {
+    console.log("this is the curent number", this.state.currQuestion);
+
     //start the timer
     // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
-    this.setState({ secondsLeft: 10 });
+    this.setState({ secondsLeft: 5 });
   }
 
   updateScore(correct) {
@@ -67,16 +80,24 @@ class App extends Component {
     console.log("picked a difficulty", e.target.value);
     this.setState({ quizDifficulty: e.target.value });
   }
-
+  setGameOver() {
+    this.setState({ gameIsOver: true });
+  }
   render() {
-    console.log("this is the state", this.state);
+    // console.log("this is the state", this.state);
 
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
-
+    // console.log("question", question);
+    // console.log("question number", questionNumber);
+    if (questionNumber === 11 && this.state.gameIsOver === false) {
+      // console.log("restart game now");
+      clearInterval(this.state.ticker);
+      this.setGameOver();
+    }
     return (
       <div className="App">
         <Welcome />
@@ -110,9 +131,13 @@ class App extends Component {
               />
             </ReactCSSTransitionReplace>
           ) : null}
+          {this.state.gameIsOver == true ? <h1>Pick a new category</h1> : ""}
         </div>
       </div>
     );
+    {
+      /* <Footer title={footer} />; */
+    }
   }
 }
 

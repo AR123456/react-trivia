@@ -15,9 +15,17 @@ class Question extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    nextProps.question === this.props.question
-      ? null
-      : this.setState(defaultState);
+    // console.log("inside will recive props ");
+    // console.log("nextprops.question", nextProps.question);
+    // console.log("this.props.question", this.props.question);
+
+    if (nextProps.question === this.props.question) {
+      return null;
+    } else {
+      console.log("reset new quiz");
+
+      this.setState(defaultState);
+    }
   }
 
   handleClick(index) {
