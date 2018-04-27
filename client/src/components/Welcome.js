@@ -18,10 +18,8 @@ const Welcome = props => {
     <form data-toggle="validator" role="form">
       <div className="CenterScreen">
         <Welcome />
-        <div className="form-group">
-          <label for="inputName" className="control-label">
-            User Name
-          </label>
+        {/* <div className="form-group">
+          <label for="inputName" className="control-label" />
           <input
             className="form-control"
             id="inputName"
@@ -31,12 +29,10 @@ const Welcome = props => {
             name="username"
             onChange={this.handleUserDetails}
           />
-        </div>
-        <br />
-        <div className="form-group">
-          <label for="inputEmail" className="control-label">
-            Email
-          </label>
+        </div> */}
+        {/* <br /> */}
+        {/* <div className="form-group">
+          <label for="inputEmail" className="control-label" />
           <input
             className="form-control"
             id="inputEmail"
@@ -48,12 +44,11 @@ const Welcome = props => {
             onChange={this.handleUserDetails}
           />
           <div className="help-block with-errors" />
-        </div>
-        <br />
-        <div class="form-group">
+        </div> */}
+        {/* <br /> */}
+        {/* <div class="form-group">
           <label for="inputPassword" className="control-label" />
           <div className="form-inline row">
-            Password
             <div className="form-group col-sm-6">
               <input
                 placeholder="Password"
@@ -81,7 +76,7 @@ const Welcome = props => {
               <div className="help-block with-errors" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </form>
   );
@@ -93,12 +88,6 @@ const Welcome = props => {
         </header>
         <h1>Trivia Time!</h1>
         <p>Log in, pick your category and difficulty.</p>
-        <p>
-          <small>
-            {/* You have <strong>60</strong> seconds to answer <strong>20</strong>{" "}
-            questions. */}
-          </small>
-        </p>
       </div>
     );
   }

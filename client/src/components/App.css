@@ -2,27 +2,59 @@
   text-align: center;
 }
 
-.StartLogo {
+/* .StartLogo {
   animation: Start-logo-saturate infinite 12s linear;
   max-width: 90vw;
   margin-top: 2vh;
-}
+} */
 
-@keyframes Start-logo-saturate {
- 0%,100% {filter: saturate(0); }
-  50% {filter: saturate(1); }
-}
+/* @keyframes Start-logo-saturate {
+  0%,
+  100% {
+    filter: saturate(0);
+  }
+  50% {
+    filter: saturate(1);
+  } */
+/* } */
 
-.ThreeGrid{
+/* .ThreeGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;   
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+.UIblocks {
+  max-width: 200px;
+  text-align: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.footer {
+  min-height: 100px;
+  background: #e5e5e5;
+  position: relative;
 }
 
-.UIblocks{
-    max-width: 200px;
-    text-align: center;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+.footer span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px;
+  background: #b8b8b8;
+}
+.form-control {
+  display: block;
+  width: 15%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

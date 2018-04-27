@@ -45,7 +45,6 @@ class Selection extends Component {
     return (
       <div className="CenterScreen">
         <Select />
-
         <br />
         <br />
         <select id="category" onChange={this.props.handleCategorySelected}>
@@ -68,6 +67,7 @@ class Selection extends Component {
             </option>
           ))}
         </select>
+        <br />
         <br />
         {/* <button className="UIblocks" onClick={this.startQuiz}>
           Start Quiz

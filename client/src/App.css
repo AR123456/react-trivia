@@ -13,14 +13,16 @@
   font-size: large;
   max-width: 800px;
   margin: auto;
-  padding: 16px
+  padding: 16px;
 }
 
 button.list-group-item {
   text-align: center;
 }
 
-button:focus {outline:0;}
+button:focus {
+  outline: 0;
+}
 
 .scoreboard {
   border-bottom: 1px solid grey;
@@ -28,13 +30,14 @@ button:focus {outline:0;}
 }
 
 .scoreboard p {
+  padding: 16px;
   font-size: 20px;
   margin: 10px;
   display: inline;
 }
 
 .carousel-swap-leave {
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translate(0, 0);
 }
 .carousel-swap-leave-active {
@@ -42,7 +45,7 @@ button:focus {outline:0;}
 }
 
 .carousel-swap-enter {
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translate(100%, 0);
 }
 .carousel-swap-enter-active {
@@ -50,7 +53,5 @@ button:focus {outline:0;}
 }
 
 .carousel-swap-height {
-  transition: height .3s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
-
-

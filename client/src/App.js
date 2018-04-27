@@ -65,7 +65,7 @@ class App extends Component {
     //start the timer
     // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
-    this.setState({ secondsLeft: 5 });
+    this.setState({ secondsLeft: 30 });
   }
 
   updateScore(correct) {
@@ -93,7 +93,7 @@ class App extends Component {
     const questionNumber = this.state.currQuestion + 1;
     // console.log("question", question);
     // console.log("question number", questionNumber);
-    if (questionNumber === 11 && this.state.gameIsOver === false) {
+    if (questionNumber === 10 && this.state.gameIsOver === false) {
       // console.log("restart game now");
       clearInterval(this.state.ticker);
       this.setGameOver();
@@ -106,10 +106,13 @@ class App extends Component {
           handleDifficultySelected={this.handleDifficultySelected}
         />
         <div className="App-header">
-          <h2>Click "Get New Quiz" to start </h2>
+          <h2>
+            To play pick a category and difficulty level then click "New Trivia
+            Game"{" "}
+          </h2>
           <h2>{this.state.secondsLeft}</h2>
           <button className="btn btn-default" onClick={this.getNewQuiz}>
-            Get New Quiz
+            New Trivia Game
           </button>
         </div>
         <div className="App-body">
@@ -131,8 +134,9 @@ class App extends Component {
               />
             </ReactCSSTransitionReplace>
           ) : null}
-          {this.state.gameIsOver == true ? <h1>Pick a new category</h1> : ""}
+          {this.state.gameIsOver == true ? <h1>Want to play again?</h1> : ""}
         </div>
+        <Footer />
       </div>
     );
     {
