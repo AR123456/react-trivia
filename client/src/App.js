@@ -44,7 +44,9 @@ class App extends Component {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
+        if (this.state.ticker) clearInterval(this.state.ticker);
         let ticker = setInterval(this.tickSeconds, 1000);
+
         this.setState({
           questions: questions,
           score: 0,
@@ -94,7 +96,13 @@ class App extends Component {
     // console.log("question", question);
     // console.log("question number", questionNumber);
     if (questionNumber === 10 && this.state.gameIsOver === false) {
-      // console.log("restart game now");
+      console.log("restart game now");
+      // this.setState({ currQuestion: 0 });
+      console.log(
+        "this is the curentQuestion after 10 is reached",
+        this.state.currQuestion
+      );
+
       clearInterval(this.state.ticker);
       this.setGameOver();
     }
@@ -111,6 +119,7 @@ class App extends Component {
             Game"{" "}
           </h2>
           <h2>{this.state.secondsLeft}</h2>
+          <br />
           <button className="btn btn-default" onClick={this.getNewQuiz}>
             New Trivia Game
           </button>
