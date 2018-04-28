@@ -60,7 +60,7 @@ class Question extends Component {
         </div>
         {this.state.answered && this.props.nextQuestion ? (
           <button
-            className="btn btn-default"
+            className="btn btn-primary active"
             onClick={this.props.handleClickNext}
           >
             Next

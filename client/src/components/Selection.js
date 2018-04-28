@@ -45,9 +45,13 @@ class Selection extends Component {
     return (
       <div className="CenterScreen">
         <Select />
+
         <br />
-        <br />
-        <select id="category" onChange={this.props.handleCategorySelected}>
+        <select
+          id="category"
+          className="text-capitalize m-1 dropdown-toggle btn btn-primary"
+          onChange={this.props.handleCategorySelected}
+        >
           <option value="" disabled selected>
             select category
           </option>
@@ -57,7 +61,11 @@ class Selection extends Component {
             </option>
           ))}
         </select>
-        <select id="difficulty" onChange={this.props.handleDifficultySelected}>
+        <select
+          id="difficulty"
+          className="text-capitalize m-1 dropdown-toggle btn btn-primary"
+          onChange={this.props.handleDifficultySelected}
+        >
           <option value="" disabled selected>
             select difficulty
           </option>

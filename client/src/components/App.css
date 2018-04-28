@@ -1,6 +1,31 @@
 .CenterScreen {
   text-align: center;
 }
+body {
+  /* background-color: peachpuff; */
+  background: url("starblue.jpg");
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.App-header {
+  /* background-color: peachpuff; */
+  background: url("pastelsky.jpg");
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.App-header h2 {
+  color: rgb(20, 20, 20);
+}
 
 /* .StartLogo {
   animation: Start-logo-saturate infinite 12s linear;

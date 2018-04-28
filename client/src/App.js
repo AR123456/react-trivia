@@ -109,22 +109,20 @@ class App extends Component {
     return (
       <div className="App">
         <Welcome />
-        <Selection
-          handleCategorySelected={this.handleCategorySelected}
-          handleDifficultySelected={this.handleDifficultySelected}
-        />
         <div className="App-header">
-          <h2>
-            To play pick a category and difficulty level then click "New Trivia
-            Game"{" "}
-          </h2>
-          <h2>{this.state.secondsLeft}</h2>
-          <br />
-          <button className="btn btn-default" onClick={this.getNewQuiz}>
+          <Selection
+            handleCategorySelected={this.handleCategorySelected}
+            handleDifficultySelected={this.handleDifficultySelected}
+          />
+          <button className="btn btn-primary active" onClick={this.getNewQuiz}>
             New Trivia Game
           </button>
         </div>
+
+        <h2>You have {this.state.secondsLeft} seconds to take action</h2>
         <div className="App-body">
+          <br />
+          <br />
           <Scoreboard
             score={score}
             questionNumber={questionNumber}
@@ -143,8 +141,25 @@ class App extends Component {
               />
             </ReactCSSTransitionReplace>
           ) : null}
-          {this.state.gameIsOver == true ? <h1>Want to play again?</h1> : ""}
+          {this.state.gameIsOver == true ? (
+            <h4>
+              Play again?{" "}
+              <Selection
+                handleCategorySelected={this.handleCategorySelected}
+                handleDifficultySelected={this.handleDifficultySelected}
+              />
+              <button
+                className="btn btn-primary active"
+                onClick={this.getNewQuiz}
+              >
+                New Trivia Game
+              </button>
+            </h4>
+          ) : (
+            ""
+          )}
         </div>
+
         <Footer />
       </div>
     );
