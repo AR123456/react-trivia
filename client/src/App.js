@@ -82,6 +82,7 @@ class App extends Component {
     console.log("picked a difficulty", e.target.value);
     this.setState({ quizDifficulty: e.target.value });
   }
+
   setGameOver() {
     this.setState({ gameIsOver: true });
   }
@@ -141,7 +142,7 @@ class App extends Component {
               />
             </ReactCSSTransitionReplace>
           ) : null}
-          {this.state.gameIsOver == true ? (
+          {this.state.gameIsOver === true ? (
             <h4>
               Play again?{" "}
               <Selection

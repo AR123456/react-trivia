@@ -1,70 +1,77 @@
 const mongoose = require("mongoose");
-const db = require("../modles");
+const db = require("../models");
 mongoose.Promise = global.Promise;
 
 //This file will empty the collection and insert below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb:// localhost/reacttrivia",
-  {
-    useMongoClient: true
-  }
+  process.env.MONGODB_URI || "mongodb:// localhost/reacttrivia"
+  // {
+  //   useMongoClient: true
+  // }
 );
 const quizSeed = [
   {
-    category: "Entertainment: Board Games",
+    category: "CSCS",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
-      "In a standard game of Monopoly, what colour are the two cheapest properties?",
-    correct_answer: "Brown",
-    incorrect_answers: ["Green", "Yellow", "Blue"],
+      "During muscular contraction, which section of the sarcomere does not move?",
+    correct_answer: "H-zone",
+    incorrect_answers: [" A-band", "M-line", "I-band"],
     date: new Date(Date.now())
   },
   {
-    category: "History",
+    category: "CSCS",
     type: "multiple",
-    difficulty: "easy",
-    question: "What was William Frederick Cody better known as?",
-    correct_answer: "Buffalo Bill",
-    incorrect_answers: ["Billy the Kid", "Wild Bill Hickok", "Pawnee Bill"],
+    difficulty: "medium",
+    question:
+      "What does the sarcoplasmic reticulum store that is significant for muscular contraction?",
+    correct_answer: "ATP",
+    incorrect_answers: ["Sodium/potassium", "Calcium ions", "Glycogen"],
     date: new Date(Date.now())
   },
   {
-    category: "Entertainment: Music",
+    category: "CSCS",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
-      "&quot;Some people call me the space cowboy&quot; is the first line from what song?",
-    correct_answer: "The Joker",
+      "What is the proper orientation for blood pressure notation, and what is considered normal blood pressure?",
+    correct_answer: "Systole/Diastole; 120/80",
     incorrect_answers: [
-      "Fandango",
-      "Take The Money and Run",
-      "Fly Like an Eagle"
+      "Systole/Diastole; 80/120",
+      "Systole/Diastole; 80/120",
+      "Diastole/Systole; 120/80"
     ],
     date: new Date(Date.now())
   },
   {
-    category: "General Knowledge",
+    category: "CSCS",
     type: "multiple",
-    difficulty: "easy",
-    question: "Area 51 is located in which US state?",
-    correct_answer: "Nevada",
-    incorrect_answers: ["Arizona", "New Mexico", "Utah"],
+    difficulty: "medium",
+    question:
+      "Where in a muscle are essential elements of muscular contraction (i.e., glycogen, fat, mitochondria) located?",
+    correct_answer: "Sarcoplasm",
+    incorrect_answers: ["Sarcoplasm", "Sarcolemma", "Sarcoplasmic reticulum"],
     date: new Date(Date.now())
   },
   {
-    category: "Entertainment: Video Games",
+    category: "CSCS",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
-      "What video game sparked controversy because of its hidden &quot;Hot Coffee&quot; minigame?",
-    correct_answer: "Grand Theft Auto: San Andreas",
-    incorrect_answers: [
-      "Grand Theft Auto: Vice City",
-      "Hitman: Blood Money",
-      "Cooking Mama"
-    ],
+      "What substance is involved in muscular contraction at the neuromuscular junction?",
+    correct_answer: "Acetylcholine",
+    incorrect_answers: ["Epinephrine", "Serotonin", "Creatine phosphate"],
+    date: new Date(Date.now())
+  },
+  {
+    category: "CSCS",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What connective tissue attaches a muscle to a bone?",
+    correct_answer: "tendon",
+    incorrect_answers: ["cartilage", "ligament", "myocyte"],
     date: new Date(Date.now())
   },
   {

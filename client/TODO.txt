@@ -1,20 +1,24 @@
 To do 
-Get timers working 
-look at this Lynda.com 
-https://www.lynda.com/React-Native-tutorials/Working-timers/560343/672443-4.html
-
-The week 6 game has a loadQuestion function  that puts the timer with countdown on the page with the question.   
-nextQuestion funcion restarts the timer at 30 seconds  and loads the next question on the page 
-the timeup function clears the timer shows corect answer, tracks in the un answered tally , waits 3 seconds then goes to resutls screen if last question or on th the next question with the timer set back to 30 seconds
-
-In the new game - 
-still to do when the quiz is over the display goes back to 30 and runs down while waiting for next quiz.  need to stop it, display scores and then re start with next quiz. 
+Try to and if not able ask TA/Tom 
+-How to put a action bar paced at # seconds remaining in place to the seconds count down 
+- How to hide the app header div once the "New Trivia Game" button in that section is clicked. 
+- shake the section with the answers displayed when question 10 has been answered.  
 
 
 
-if that works add a database seeded with some additionnal questions and answers and create form for user input.  store in same format as api
+The Database -
+set it up with the seed data questions - catagories CSCS and Nero, 15 questions each. 
+duplicate and move the client side build to the server and set up to send to the User quiz page. 
+Set up form to data enter a new CSCS or Neuro question. 
+Set up a delete button 
+
+
+
 
 if all that works add front end bootstrap user authentication 
 
 if that all works add pasport user auth 
 
+Get timers working 
+look at this Lynda.com 
+https://www.lynda.com/React-Native-tutorials/Working-timers/560343/672443-4.html

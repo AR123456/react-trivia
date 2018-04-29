@@ -1,8 +1,10 @@
 To do 
-Get timers working - 
-they are kind of working - issue with continuing to loop through non exisitend quesitons, need to stop loop and start again after new quiz is choosen
-get rid of next quesiton button.
-add to score section un answered 
+see if it is possible to use a state to hide the the section at the top with the game selectors in it after the game starts and then not show it again untill after the page reloads - so that while user is playing only the section at bottom to play again shows. 
+
+do something with the footer. 
+
+add something on the side that opens on over to selected the db version of the game 
+
 
 back end - 
 set up db structure to match the api call seed file created, add a few more with CCRN or CSCS category 
@@ -11,6 +13,7 @@ seed db with quiz - ask a TA how to seed  and  move DB with data to heroku
 add ability to play game from the DB 
 
 User authentiction 
+look at  auth o    https://auth0.com/blog/reactjs-authentication-tutorial/
 add bootstrap authentiation front end
 passport on back end 
 user table in the db 
