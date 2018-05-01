@@ -7,7 +7,7 @@ import "./App.css";
 import Welcome from "./components/Welcome";
 import Footer from "./components/Footer";
 import Selection from "./components/Selection";
-import ModalPage from "./components/Modal";
+// import ModalPage from "./components/Modal";
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       questions: [],
       currQuestion: 0,
-      secondsLeft: 0,
+      secondsLeft: 30,
       score: 0,
       quizCategoryID: 0,
       quizDifficulty: "easy",
@@ -51,6 +51,7 @@ class App extends Component {
 
         this.setState({
           questions: questions,
+          secondsLeft: 30,
           score: 0,
           currQuestion: 0,
           ticker: ticker,
@@ -69,6 +70,7 @@ class App extends Component {
     //start the timer
     // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
+
     this.setState({ secondsLeft: 30 });
   }
 
@@ -112,9 +114,9 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <ModalPage>
+        {/* <ModalPage>
           <h1>This is some modal text </h1>
-        </ModalPage>
+        </ModalPage> */}
         <Welcome />
         <div className="App-header">
           <Selection

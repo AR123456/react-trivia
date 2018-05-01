@@ -14,8 +14,10 @@ body {
 }
 .App-header {
   /* background-color: peachpuff; */
+
   background: url("pastelsky.jpg");
   /* Full height */
+  background-color: #f4f7fa;
   height: 100%;
 
   /* Center and scale the image nicely */

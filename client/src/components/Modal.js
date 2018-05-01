@@ -111,4 +111,4 @@ class ModalPage extends React.Component {
   }
 }
 
-export default ModalPage;
+// export default ModalPage;
