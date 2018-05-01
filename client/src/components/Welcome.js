@@ -87,10 +87,7 @@ const Welcome = props => {
           {/* <img src={logo} className="StartLogo" alt="logo" /> */}
         </header>
         <h1>Trivia Time!</h1>
-        <h2>
-          To play pick a category and difficulty level then click "New Trivia
-          Game"{" "}
-        </h2>
+        <h2> </h2>
       </div>
     );
   }

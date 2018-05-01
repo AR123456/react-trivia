@@ -26,7 +26,23 @@ body {
 .App-header h2 {
   color: rgb(20, 20, 20);
 }
-
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 50;
+}
+.modalStyle {
+  background-color: #fff;
+  border-radius: 5;
+  max-width: 500;
+  min-height: 300;
+  margin: 0 auto;
+  padding: 30;
+}
 /* .StartLogo {
   animation: Start-logo-saturate infinite 12s linear;
   max-width: 90vw;
@@ -57,8 +73,8 @@ body {
   margin-bottom: 2vh;
 }
 .footer {
-  min-height: 100px;
-  background: #e5e5e5;
+  min-height: 50px;
+  background: #f4f7fa;
   position: relative;
 }
 

@@ -7,6 +7,7 @@ import "./App.css";
 import Welcome from "./components/Welcome";
 import Footer from "./components/Footer";
 import Selection from "./components/Selection";
+import ModalPage from "./components/Modal";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
     this.state = {
       questions: [],
       currQuestion: 0,
-      secondsLeft: 5,
+      secondsLeft: 0,
       score: 0,
       quizCategoryID: 0,
       quizDifficulty: "easy",
@@ -29,6 +30,7 @@ class App extends Component {
     this.handleCategorySelected = this.handleCategorySelected.bind(this);
     this.setGameOver = this.setGameOver.bind(this);
   }
+
   tickSeconds = () => {
     if (this.state.secondsLeft === 0) {
       console.log("timer is at 0", this.state.secondsLeft);
@@ -71,7 +73,7 @@ class App extends Component {
   }
 
   updateScore(correct) {
-    this.setState({ secondsLeft: 3 });
+    this.setState({ secondsLeft: 0 });
     if (correct) this.setState({ score: this.state.score + 1 });
   }
   handleCategorySelected(e) {
@@ -86,6 +88,7 @@ class App extends Component {
   setGameOver() {
     this.setState({ gameIsOver: true });
   }
+
   render() {
     // console.log("this is the state", this.state);
 
@@ -109,6 +112,9 @@ class App extends Component {
     }
     return (
       <div className="App">
+        <ModalPage>
+          <h1>This is some modal text </h1>
+        </ModalPage>
         <Welcome />
         <div className="App-header">
           <Selection
@@ -120,10 +126,8 @@ class App extends Component {
           </button>
         </div>
 
-        <h2>You have {this.state.secondsLeft} seconds to take action</h2>
+        <h2>Countdown {this.state.secondsLeft} </h2>
         <div className="App-body">
-          <br />
-          <br />
           <Scoreboard
             score={score}
             questionNumber={questionNumber}
@@ -144,8 +148,8 @@ class App extends Component {
           ) : null}
           {this.state.gameIsOver === true ? (
             <h4>
-              Play again?{" "}
-              <Selection
+              Game over, Play again?{" "}
+              {/* <Selection
                 handleCategorySelected={this.handleCategorySelected}
                 handleDifficultySelected={this.handleDifficultySelected}
               />
@@ -154,7 +158,7 @@ class App extends Component {
                 onClick={this.getNewQuiz}
               >
                 New Trivia Game
-              </button>
+              </button> */}
             </h4>
           ) : (
             ""
@@ -164,9 +168,9 @@ class App extends Component {
         <Footer />
       </div>
     );
-    {
-      /* <Footer title={footer} />; */
-    }
+    // {
+    //   /* <Footer title={footer} />; */
+    // }
   }
 }
 
