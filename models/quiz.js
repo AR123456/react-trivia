@@ -7,10 +7,17 @@ const quizSchema = new Schema({
   difficulty: { type: String, required: true },
   question: { type: String, required: true },
   correct_answer: { type: String, required: true },
-  incorrect_answers: [{ type: String, required: true }],
+  incorrect_answers: {
+    type: String,
+    required: true,
+    type: String,
+    required: true,
+    type: String,
+    required: true
+  },
   date: { type: Date, default: Date.now }
 });
 
-const Quiz = mongoose.model("Quizes", quizSchema);
+const Quiz = mongoose.model("Quiz", quizSchema);
 
 module.exports = Quiz;

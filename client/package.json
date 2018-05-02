@@ -2,16 +2,20 @@
   "name": "react-quiz",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "devDependencies": {
     "react-scripts": "^1.0.10"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bootstrap": "4.0.0",
+    "classnames": "^2.2.5",
     "file-loader": "^1.1.11",
     "prop-types": "^15.6.1",
     "react": "^15.6.1",
     "react-css-transition-replace": "^2.2.1",
     "react-dom": "^15.6.2",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.14",
     "reactstrap": "^5.0.0"

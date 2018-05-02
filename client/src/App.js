@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Question from "./components/Question";
 import Scoreboard from "./components/Scoreboard";
-import quizClient from "./utils/quizClient";
+import quizClient from "./utils/API";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "./App.css";
 import Welcome from "./components/Welcome";

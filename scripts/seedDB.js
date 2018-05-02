@@ -137,6 +137,7 @@ const quizSeed = [
     date: new Date(Date.now())
   }
 ];
+
 db.Quiz.remove({})
   .then(() => db.Quiz.collection.insertMany(quizSeed))
   .then(data => {
