@@ -58,14 +58,14 @@ class Question extends Component {
             />
           ))}
         </div>
-        {this.state.answered && this.props.nextQuestion ? (
+        {/* {this.state.answered && this.props.nextQuestion ? (
           <button
             className="btn btn-primary active"
             onClick={this.props.handleClickNext}
           >
             Next
           </button>
-        ) : null}
+        ) : null} */}
       </div>
     );
   }

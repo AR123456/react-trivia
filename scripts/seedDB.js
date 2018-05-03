@@ -4,12 +4,26 @@ mongoose.Promise = global.Promise;
 
 //This file will empty the collection and insert below
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb:// localhost/reacttrivia"
-  // {
-  //   useMongoClient: true
-  // }
-);
+mongoose
+  .connect(
+    process.env.MONGODB_URI || "mongodb://localhost/reacttrivia"
+    // {
+    //   useMongoClient: true
+    // }
+  )
+  .then(() => {
+    db.Quiz.remove({})
+      .then(() => db.Quiz.collection.insertMany(quizSeed))
+      .then(data => {
+        console.log(data.insertedIds.length + "records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
+  });
+
 const quizSeed = [
   {
     category: "CSCS",
@@ -137,14 +151,3 @@ const quizSeed = [
     date: new Date(Date.now())
   }
 ];
-
-db.Quiz.remove({})
-  .then(() => db.Quiz.collection.insertMany(quizSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + "records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
