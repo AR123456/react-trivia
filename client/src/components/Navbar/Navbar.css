@@ -2,3 +2,6 @@ nav.navbar.navbar-default {
   margin-bottom: 0;
   color: black;
 }
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  background-color: #def5ef;
+}

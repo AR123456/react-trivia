@@ -46,21 +46,24 @@ class UserGame extends Component {
       .then(questions => {
         console.log("quizequ", questions);
 
-        if (this.state.ticker) clearInterval(this.state.ticker);
-        let ticker = setInterval(this.tickSeconds, 1000);
+        // if (this.state.ticker) {
+        clearInterval(this.state.ticker);
+        // let ticker = setInterval(this.tickSeconds, 1000);
+        let ticker = "";
 
         this.setState({
-          questions: questions,
+          questions: questions.data,
           secondsLeft: 30,
           score: 0,
           currQuestion: 0,
           ticker: ticker,
           gameIsOver: false
         });
+        // }
       });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getNewQuiz();
   }
 
@@ -92,14 +95,20 @@ class UserGame extends Component {
   }
 
   render() {
-    // console.log("this is the state", this.state);
+    console.log("this is the state", this.state);
 
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
+    let choices = [];
+    if (question) {
+      choices = question.incorrect_answers;
+      choices.push(question.correct_answer);
+    }
+
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
-    // console.log("question", question);
+    console.log("question", question);
     // console.log("question number", questionNumber);
     if (questionNumber === 10 && this.state.gameIsOver === false) {
       console.log("restart game now");
@@ -140,7 +149,7 @@ class UserGame extends Component {
               <Question
                 key={questionNumber}
                 question={question.question}
-                choices={question.choices}
+                choices={question.incorrect_answers}
                 correctChoice={question.correctChoice}
                 nextQuestion={nextQuestion}
                 handleClickNext={this.handleClickNext}
