@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Question from "../components/Question";
 import Scoreboard from "../components/ScoreBoard";
-import quizClient from "../utils/APIdb";
+import quizClient from "../utils/API";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "../App.css";
+import Selection from "../components/Selection";
+// import ModalPage from "./components/Modal";
 
-import Selection from "../components/UserSelection";
-
-class UserGame extends Component {
+class APIGame extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,8 +44,6 @@ class UserGame extends Component {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
-        console.log("quizequ", questions);
-
         if (this.state.ticker) clearInterval(this.state.ticker);
         let ticker = setInterval(this.tickSeconds, 1000);
 
@@ -115,8 +113,8 @@ class UserGame extends Component {
     return (
       <div className="App">
         {/* <ModalPage>
-            <h1>This is some modal text </h1>
-          </ModalPage> */}
+          <h1>This is some modal text </h1>
+        </ModalPage> */}
 
         <div className="App-header">
           <Selection
@@ -150,17 +148,17 @@ class UserGame extends Component {
           ) : null}
           {this.state.gameIsOver === true ? (
             <h4>
-              This is your trivia game Game over, Play again?{" "}
+              Game over, Play again?{" "}
               {/* <Selection
-                  handleCategorySelected={this.handleCategorySelected}
-                  handleDifficultySelected={this.handleDifficultySelected}
-                />
-                <button
-                  className="btn btn-primary active"
-                  onClick={this.getNewQuiz}
-                >
-                  New Trivia Game
-                </button> */}
+                handleCategorySelected={this.handleCategorySelected}
+                handleDifficultySelected={this.handleDifficultySelected}
+              />
+              <button
+                className="btn btn-primary active"
+                onClick={this.getNewQuiz}
+              >
+                New Trivia Game
+              </button> */}
             </h4>
           ) : (
             ""
@@ -174,4 +172,4 @@ class UserGame extends Component {
   }
 }
 
-export default UserGame;
+export default APIGame;

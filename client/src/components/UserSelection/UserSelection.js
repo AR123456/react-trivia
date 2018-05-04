@@ -1,8 +1,8 @@
 // import React from "react";
 import React, { Component } from "react";
-import "./App.css";
+import "../App.css";
 
-class Selection extends Component {
+class UserSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {

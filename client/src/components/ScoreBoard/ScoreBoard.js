@@ -1,6 +1,6 @@
 import React from "react";
 
-const Scoreboard = props => {
+const ScoreBoard = props => {
   return (
     <div className="scoreboard">
       <p>Score: {props.score}</p>
@@ -12,4 +12,4 @@ const Scoreboard = props => {
   );
 };
 
-export default Scoreboard;
+export default ScoreBoard;

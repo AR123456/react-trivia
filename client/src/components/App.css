@@ -3,7 +3,7 @@
 }
 body {
   /* background-color: peachpuff; */
-  background: url("starblue.jpg");
+  /* background: url("starblue.jpg"); */
   /* Full height */
   height: 100%;
 
@@ -15,7 +15,7 @@ body {
 .App-header {
   /* background-color: peachpuff; */
 
-  background: url("pastelsky.jpg");
+  /* background: url("pastelsky.jpg"); */
   /* Full height */
   background-color: #f4f7fa;
   height: 100%;

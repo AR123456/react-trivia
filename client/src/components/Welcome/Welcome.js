@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./bananadance.gif";
+// import logo from "";
 
 // handleUserDetails = event => {
 //   if (event.target.name === "name") {
