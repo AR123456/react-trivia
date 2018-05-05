@@ -9,7 +9,7 @@ class UserSelection extends Component {
       quiz: {
         categories: {
           "Any Category": 0,
-          CSCS: 99
+          Mine: 99
         },
         difficulties: ["any difficulty", "easy", "medium", "hard"],
         quizCategoryID: 0,

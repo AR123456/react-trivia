@@ -26,7 +26,7 @@ mongoose
 
 const quizSeed = [
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -36,7 +36,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -46,7 +46,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -60,7 +60,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -70,7 +70,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -80,7 +80,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question: "What connective tissue attaches a muscle to a bone?",
@@ -89,7 +89,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -99,7 +99,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -113,7 +113,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -123,7 +123,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
@@ -137,7 +137,7 @@ const quizSeed = [
     date: new Date(Date.now())
   },
   {
-    category: "CSCS",
+    category: "Mine",
     type: "multiple",
     difficulty: "medium",
     question:
