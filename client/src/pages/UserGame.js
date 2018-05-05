@@ -44,12 +44,14 @@ class UserGame extends Component {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
-        console.log("quizequ", questions);
+        if (this.state.ticker) clearInterval(this.state.ticker);
+        let ticker = setInterval(this.tickSeconds, 1000);
 
+        // console.log("Is this logging the quiz question", questions);
         // if (this.state.ticker) {
-        clearInterval(this.state.ticker);
+        // clearInterval(this.state.ticker);
         // let ticker = setInterval(this.tickSeconds, 1000);
-        let ticker = "";
+        // let ticker = "";
 
         this.setState({
           questions: questions.data,
@@ -62,8 +64,8 @@ class UserGame extends Component {
         // }
       });
   }
-
-  componentWillMount() {
+  componentDidMount() {
+    // componentWillMount()
     this.getNewQuiz();
   }
 
@@ -95,21 +97,20 @@ class UserGame extends Component {
   }
 
   render() {
-    console.log("this is the state", this.state);
+    // console.log("this is the state", this.state);
 
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
     let choices = [];
     if (question) {
-      choices = question.incorrect_answers;
-      choices.push(question.correct_answer);
-    }
+      choices = [...question.incorrect_answers, question.correct_answer];
 
+      // choices.push(question.correct_answer);
+    }
+    console.log("what is question", question);
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
-    console.log("question", question);
-    // console.log("question number", questionNumber);
     if (questionNumber === 10 && this.state.gameIsOver === false) {
       console.log("restart game now");
       // this.setState({ currQuestion: 0 });
@@ -149,8 +150,8 @@ class UserGame extends Component {
               <Question
                 key={questionNumber}
                 question={question.question}
-                choices={question.incorrect_answers}
-                correctChoice={question.correctChoice}
+                choices={choices}
+                correctChoice={choices.indexOf(question.correct_answer)}
                 nextQuestion={nextQuestion}
                 handleClickNext={this.handleClickNext}
                 updateScore={this.updateScore}

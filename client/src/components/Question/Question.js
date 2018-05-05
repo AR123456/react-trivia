@@ -22,7 +22,7 @@ class Question extends Component {
     if (nextProps.question === this.props.question) {
       return null;
     } else {
-      console.log("reset new quiz");
+      // console.log("reset new quiz");
 
       this.setState(defaultState);
     }

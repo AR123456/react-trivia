@@ -63,7 +63,7 @@ class APIGame extends Component {
   }
 
   handleClickNext() {
-    console.log("this is the curent number", this.state.currQuestion);
+    // console.log("this is the curent number", this.state.currQuestion);
 
     //start the timer
     // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
@@ -100,12 +100,12 @@ class APIGame extends Component {
     // console.log("question", question);
     // console.log("question number", questionNumber);
     if (questionNumber === 10 && this.state.gameIsOver === false) {
-      console.log("restart game now");
+      // console.log("restart game now");
       // this.setState({ currQuestion: 0 });
-      console.log(
-        "this is the curentQuestion after 10 is reached",
-        this.state.currQuestion
-      );
+      // console.log(
+      //   "this is the curentQuestion after 10 is reached",
+      //   this.state.currQuestion
+      // );
 
       clearInterval(this.state.ticker);
       this.setGameOver();

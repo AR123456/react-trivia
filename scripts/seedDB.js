@@ -15,7 +15,7 @@ mongoose
     db.Quiz.remove({})
       .then(() => db.Quiz.collection.insertMany(quizSeed))
       .then(data => {
-        console.log(data.insertedIds.length + "records inserted!");
+        // console.log(data.insertedIds.length + "records inserted!");
         process.exit(0);
       })
       .catch(err => {
@@ -66,7 +66,7 @@ const quizSeed = [
     question:
       "Where in a muscle are essential elements of muscular contraction (i.e., glycogen, fat, mitochondria) located?",
     correct_answer: "Sarcoplasm",
-    incorrect_answers: ["Sarcoplasm", "Sarcolemma", "Sarcoplasmic reticulum"],
+    incorrect_answers: ["Plasma", "Sarcolemma", "Sarcoplasmic reticulum"],
     date: new Date(Date.now())
   },
   {
@@ -132,7 +132,7 @@ const quizSeed = [
     incorrect_answers: [
       " decreased cross-sectional area of Type I fibers",
       " increased number of muscle fibers",
-      "imporved VO2 max"
+      "improved VO2 max"
     ],
     date: new Date(Date.now())
   },
