@@ -147,9 +147,10 @@ class APIGame extends Component {
             </ReactCSSTransitionReplace>
           ) : null}
           {this.state.gameIsOver === true ? (
-            <h4>
-              Game over, Play again?{" "}
-              {/* <Selection
+            <div className="gameover">
+              <h4>
+                {" "}
+                {/* <Selection
                 handleCategorySelected={this.handleCategorySelected}
                 handleDifficultySelected={this.handleDifficultySelected}
               />
@@ -159,7 +160,14 @@ class APIGame extends Component {
               >
                 New Trivia Game
               </button> */}
-            </h4>
+                <button
+                  className="btn btn-primary active"
+                  onClick={this.getNewQuiz}
+                >
+                  Game over, Play again?
+                </button>
+              </h4>
+            </div>
           ) : (
             ""
           )}

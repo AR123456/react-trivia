@@ -158,19 +158,21 @@ class UserGame extends Component {
             </ReactCSSTransitionReplace>
           ) : null}
           {this.state.gameIsOver === true ? (
-            <h4>
-              This is your trivia game Game over, Play again?{" "}
-              {/* <Selection
-                  handleCategorySelected={this.handleCategorySelected}
-                  handleDifficultySelected={this.handleDifficultySelected}
-                />
-                <button
-                  className="btn btn-primary active"
-                  onClick={this.getNewQuiz}
-                >
-                  New Trivia Game
-                </button> */}
-            </h4>
+            <div className="gameover">
+              <h4>
+                Game over, Play again?{" "}
+                {/* <Selection
+                handleCategorySelected={this.handleCategorySelected}
+                handleDifficultySelected={this.handleDifficultySelected}
+              />
+              <button
+                className="btn btn-primary active"
+                onClick={this.getNewQuiz}
+              >
+                New Trivia Game
+              </button> */}
+              </h4>
+            </div>
           ) : (
             ""
           )}

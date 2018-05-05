@@ -1,26 +1,24 @@
 .CenterScreen {
   text-align: center;
 }
-body {
+/* body {
   /* background-color: peachpuff; */
-  /* background: url("starblue.jpg"); */
-  /* Full height */
-  height: 100%;
+/* background: url("starblue.jpg"); */
+/* Full height */
+/* height: 100%; */
 
-  /* Center and scale the image nicely */
-  background-position: center;
+/* Center and scale the image nicely */
+/* background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-}
-#root {
+  background-size: cover; */
+/* } */
+body {
   background-color: rgb(255, 202, 198);
   /* background-color: peachpuff; */
   background: url("whiteflower.jpg");
   /* Full height */
   height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
+  background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -66,10 +64,10 @@ body {
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
-.footer {
+footer {
   min-height: 50px;
-  background: #f4f7fa;
   position: relative;
+  color: white;
 }
 
 .footer span {
@@ -110,3 +108,8 @@ h3 {
   background-color: #fdebfd;
   border-color: #2e6da4;
 }
+/* .gameover {
+  width: 15%;
+  position: center;
+  background-color: #def5ef;
+} */

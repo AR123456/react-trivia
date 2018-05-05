@@ -6,9 +6,7 @@ import "./Navbar.css";
 
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
-      Trivia Time
-    </Link>
+    <Link className="navbar-brand" to="/" />
     <div>
       <ul className="navbar-nav">
         <li
@@ -31,7 +29,7 @@ const Navbar = props => (
           }
         >
           <Link to="/UserGame" className="nav-link">
-            Your Game
+            Custom Game
           </Link>
         </li>
         <li
@@ -41,7 +39,7 @@ const Navbar = props => (
               : "nav-item"
           }
         >
-          <Link to="/CreateGamet" className="nav-link">
+          <Link to="/CreateGame" className="nav-link">
             Create a game
           </Link>
         </li>

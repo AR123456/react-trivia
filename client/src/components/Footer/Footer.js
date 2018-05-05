@@ -4,9 +4,8 @@ import SourceLink from "./SourceLink";
 
 const Footer = () => (
   <footer className="footer">
-    <span>
-      2018 Anne Rottler <SourceLink>Github</SourceLink>{" "}
-    </span>
+    {/* <span> */}
+    {/* 2018 Anne Rottler <SourceLink>Github</SourceLink> </span> */}
   </footer>
 );
 export default Footer;
