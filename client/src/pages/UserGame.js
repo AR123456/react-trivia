@@ -161,7 +161,13 @@ class UserGame extends Component {
           {this.state.gameIsOver === true ? (
             <div className="gameover">
               <h4>
-                Game over, Play again?{" "}
+                <button
+                  className="btn btn-primary active"
+                  onClick={this.getNewQuiz}
+                >
+                  Game over, Play again?
+                </button>
+                {/* Game over, Play again?{" "} */}
                 {/* <Selection
                 handleCategorySelected={this.handleCategorySelected}
                 handleDifficultySelected={this.handleDifficultySelected}
