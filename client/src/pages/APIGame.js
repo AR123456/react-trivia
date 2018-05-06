@@ -59,7 +59,7 @@ class APIGame extends Component {
   }
 
   componentDidMount() {
-    this.getNewQuiz();
+    // this.getNewQuiz();
   }
 
   handleClickNext() {

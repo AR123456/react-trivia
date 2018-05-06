@@ -32,6 +32,11 @@ export default {
       "&type=multiple&encode=url3986";
     return fetch(url)
       .then(res => res.json())
-      .then(json => makeQuizObjs(json));
+      .then(json => {
+        console.log("this is the JSON we use to make quiz", json);
+
+        const data = makeQuizObjs(json);
+        return data;
+      });
   }
 };

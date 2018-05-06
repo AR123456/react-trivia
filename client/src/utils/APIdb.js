@@ -2,8 +2,15 @@ import axios from "axios";
 
 export default {
   // Gets all quizes
+
   getQuizes: function() {
-    return axios.get("/api/quizzes");
+    return axios.get("/api/quizzes").then(datafromdb => {
+      console.log("this is data from the db ", datafromdb);
+      var testingMakeQuizObject = makeQuizObjs(datafromdb);
+      console.log("testing var make quizqobj", testingMakeQuizObject);
+
+      return testingMakeQuizObject;
+    });
   },
   // Gets the quiz  with the given id
   getQuiz: function(id) {
@@ -18,21 +25,29 @@ export default {
     return axios.post("/api/quizzes", quizData);
   }
 };
-// const makeQuizObjs = json => {
-//   return json.results.map(question => {
-//     const q = {
-//       question: decodeURIComponent(question.question),
-//       choices: question.incorrect_answers.map(c => decodeURIComponent(c))
-//     };
-//     const correct_answer_index = Math.floor(
-//       Math.random() * (q.choices.length - 1) + 1
-//     );
-//     q.choices.splice(
-//       correct_answer_index,
-//       0,
-//       decodeURIComponent(question.correct_answer)
-//     );
-//     q.correctChoice = correct_answer_index;
-//     return q;
-//   });
-// };
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const makeQuizObjs = json => {
+  var correctQuestions = json.data.map(question => {
+    const q = {
+      question: decodeURIComponent(question.question),
+      choices: question.incorrect_answers.map(c => decodeURIComponent(c))
+    };
+    const correct_answer_index = Math.floor(
+      Math.random() * (q.choices.length - 1) + 1
+    );
+    q.choices.splice(
+      correct_answer_index,
+      0,
+      decodeURIComponent(question.correct_answer)
+    );
+    q.correctChoice = correct_answer_index;
+    return q;
+  });
+  return shuffle(correctQuestions);
+};
