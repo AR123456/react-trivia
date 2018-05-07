@@ -13,17 +13,17 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-// // Set up promises with mongoose
-mongoose.Promise = global.Promise;
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reacttrivia");
-
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reacttrivia";
-
-// // Connect to the Mongo DB
-// mongoose.connect(MONGODB_URI || "mongodb://localhost/reacttrivia", {
-//   useMongoClient: true
-// });
+//if deployed use deployed db , other wise use the local mongoheadlines db
+var db = process.env.MONGODB_URI || "mongodb://localhost/reacttrivia";
+//connect mongoose to the db
+mongoose.connect(db, function(error) {
+  //log error if it happens
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("mongoose connected");
+  }
+});
 
 // Start the API server
 app.listen(PORT, function() {
