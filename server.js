@@ -18,6 +18,8 @@ mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reacttrivia");
 
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reacttrivia";
+
 // // Connect to the Mongo DB
 // mongoose.connect(MONGODB_URI || "mongodb://localhost/reacttrivia", {
 //   useMongoClient: true
