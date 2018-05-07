@@ -32,8 +32,6 @@ class UserGame extends Component {
   tickSeconds = () => {
     if (this.state.secondsLeft === 0) {
       console.log("timer is at 0", this.state.secondsLeft);
-
-      // this.handleEndQuiz();
       this.handleClickNext();
     } else {
       this.setState({ secondsLeft: this.state.secondsLeft - 1 });
@@ -46,13 +44,6 @@ class UserGame extends Component {
       .then(questions => {
         if (this.state.ticker) clearInterval(this.state.ticker);
         let ticker = setInterval(this.tickSeconds, 1000);
-
-        // console.log("Is this logging the quiz question", questions);
-        // if (this.state.ticker) {
-        // clearInterval(this.state.ticker);
-        // let ticker = setInterval(this.tickSeconds, 1000);
-        // let ticker = "";
-
         this.setState({
           questions: questions,
           secondsLeft: 30,
@@ -61,24 +52,15 @@ class UserGame extends Component {
           ticker: ticker,
           gameIsOver: false
         });
-        // }
       });
   }
-  componentDidMount() {
-    // componentWillMount()
-    // this.getNewQuiz();
-  }
+  componentDidMount() {}
 
   handleClickNext() {
     console.log("this is the curent number", this.state.currQuestion);
-
-    //start the timer
-    // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
-
     this.setState({ secondsLeft: 30 });
   }
-
   updateScore(correct) {
     this.setState({ secondsLeft: 0 });
     if (correct) this.setState({ score: this.state.score + 1 });
@@ -91,43 +73,27 @@ class UserGame extends Component {
     console.log("picked a difficulty", e.target.value);
     this.setState({ quizDifficulty: e.target.value });
   }
-
   setGameOver() {
     this.setState({ gameIsOver: true });
   }
-
   render() {
     // console.log("this is the state", this.state);
-
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
-    // let choices = [];
-    // if (question) {
-    //   choices = [...question.incorrect_answers, question.correct_answer];
-
-    //   // choices.push(question.correct_answer);
-    // }
-    // console.log("what is question", question);
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
     if (questionNumber === 10 && this.state.gameIsOver === false) {
       console.log("restart game now");
-      // this.setState({ currQuestion: 0 });
       console.log(
         "this is the curentQuestion after 10 is reached",
         this.state.currQuestion
       );
-
       clearInterval(this.state.ticker);
       this.setGameOver();
     }
     return (
       <div className="App">
-        {/* <ModalPage>
-            <h1>This is some modal text </h1>
-          </ModalPage> */}
-
         <div className="App-header">
           <Selection
             handleCategorySelected={this.handleCategorySelected}
@@ -137,7 +103,6 @@ class UserGame extends Component {
             New Trivia Game
           </button>
         </div>
-
         <h2>Countdown {this.state.secondsLeft} </h2>
         <div className="App-body">
           <Scoreboard
@@ -167,17 +132,6 @@ class UserGame extends Component {
                 >
                   Game over, Play again?
                 </button>
-                {/* Game over, Play again?{" "} */}
-                {/* <Selection
-                handleCategorySelected={this.handleCategorySelected}
-                handleDifficultySelected={this.handleDifficultySelected}
-              />
-              <button
-                className="btn btn-primary active"
-                onClick={this.getNewQuiz}
-              >
-                New Trivia Game
-              </button> */}
               </h4>
             </div>
           ) : (
@@ -191,5 +145,4 @@ class UserGame extends Component {
     // }
   }
 }
-
 export default UserGame;

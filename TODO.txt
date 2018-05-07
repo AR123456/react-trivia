@@ -1,4 +1,0 @@
-version 43 of this game worked before the work done in the create from file 
-have commented it out for now , work on the form from the book app and use the suggestions from the create form component to get them into the array 
-
-the same 10 quetions are coming from the database - can that number be increased or randomized 

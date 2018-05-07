@@ -1,14 +1,11 @@
 import axios from "axios";
-
 export default {
   // Gets all quizes
-
   getQuizes: function() {
     return axios.get("/api/quizzes").then(datafromdb => {
       console.log("this is data from the db ", datafromdb);
       var testingMakeQuizObject = makeQuizObjs(datafromdb);
       console.log("testing var make quizqobj", testingMakeQuizObject);
-
       return testingMakeQuizObject;
     });
   },

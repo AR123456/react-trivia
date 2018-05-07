@@ -1,22 +1,10 @@
 .CenterScreen {
   text-align: center;
 }
-/* body {
-  /* background-color: peachpuff; */
-/* background: url("starblue.jpg"); */
-/* Full height */
-/* height: 100%; */
 
-/* Center and scale the image nicely */
-/* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-/* } */
 body {
   background-color: rgb(255, 202, 198);
-  /* background-color: peachpuff; */
   background: url("whiteflower.jpg");
-  /* Full height */
   height: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -24,14 +12,8 @@ body {
   background-size: cover;
 }
 .App-header {
-  /* background-color: peachpuff; */
-
-  /* background: url("pastelsky.jpg"); */
-  /* Full height */
   background-color: #def5ef;
   height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -109,8 +91,3 @@ h3 {
   background-color: #fdebfd;
   border-color: #2e6da4;
 }
-/* .gameover {
-  width: 15%;
-  position: center;
-  background-color: #def5ef;
-} */

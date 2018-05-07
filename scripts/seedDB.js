@@ -5,17 +5,11 @@ mongoose.Promise = global.Promise;
 //This file will empty the collection and insert below
 
 mongoose
-  .connect(
-    process.env.MONGODB_URI || "mongodb://localhost/reacttrivia"
-    // {
-    //   useMongoClient: true
-    // }
-  )
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/reacttrivia")
   .then(() => {
     db.Quiz.remove({})
       .then(() => db.Quiz.collection.insertMany(quizSeed))
       .then(data => {
-        // console.log(data.insertedIds.length + "records inserted!");
         process.exit(0);
       })
       .catch(err => {

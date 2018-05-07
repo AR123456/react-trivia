@@ -5,3 +5,15 @@ nav.navbar.navbar-default {
 .navbar.navbar-expand-lg.navbar-light.bg-light {
   background-color: #def5ef;
 }
+ul {
+  list-style-type: none;
+}
+li {
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid blue;
+  border-radius: 25px;
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 2px;
+}

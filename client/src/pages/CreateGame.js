@@ -10,7 +10,6 @@ import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 
 class CreateGame extends Component {
-  //setting the components initial state
   state = {
     category: "Mine",
     type: "multiple",
@@ -20,32 +19,26 @@ class CreateGame extends Component {
     incorrect_answers: ["", "", ""],
     date: new Date(Date.now())
   };
-  // When the component mounts, load all the DB questions to this.state.quizzes
   componentDidMount() {
     this.loadQuestions();
   }
-  //loads all the quiz questions and sets them to this.state.quizzes
   loadQuestions = () => {
     APIdb.getQuizes()
       .then(res => this.setState({ question: res.data }))
       .catch(err => console.log(err));
   };
-  //Deletes a question from the db with a given ID, then reloades teh quesitons from the db
   deleteQuetion = id => {
     APIdb.deleteQuiz(id)
       .then(res => this.loadQuestions())
       .catch(err => console.log(err));
   };
-  //Handles updating component state when the user types into the input field
   handleInputChange = event => {
     const { question, value } = event.target;
     console.log("This is the handleInput state change", value);
-
     this.setState({
       [question]: value
     });
   };
-  //When form is submitted, use the APIdb.save method to save the qeusiton data  Then reload the questions to the database
   handleFormSubmit = event => {
     event.preventDefault();
     if (
@@ -69,8 +62,6 @@ class CreateGame extends Component {
         .catch(err => console.log(err));
       console.log("This is the handale form submit");
     }
-    // send me to the db
-    // this.props.createNewQuestion();
   };
   render() {
     console.log("I was triggered during render");
@@ -79,7 +70,7 @@ class CreateGame extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h2>Add new questions</h2>
+              <h2>Add New Questions</h2>
             </Jumbotron>
             <form>
               <Input
@@ -95,12 +86,12 @@ class CreateGame extends Component {
               <Input
                 onChange={this.handleInputChange}
                 name="incorrect_1"
-                placeholder="Incorrect Answer One   (required)"
+                placeholder="Incorrect Answer One (required)"
               />
               <Input
                 onChange={this.handleInputChange}
                 name="incorrect_2"
-                placeholder="Incorrect Answer Two(required)"
+                placeholder="Incorrect Answer Two (required)"
               />
               <Input
                 onChange={this.handleInputChange}
@@ -114,9 +105,9 @@ class CreateGame extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h2>My Game Questions</h2>
+              <h2>Questions I Added</h2>
             </Jumbotron>
-            <h3>No Results to Display</h3>
+            {/* <h4>No Results to Display</h4> */}
           </Col>
         </Row>
       </Container>

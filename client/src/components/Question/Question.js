@@ -13,26 +13,17 @@ class Question extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.calcChoiceState = this.calcChoiceState.bind(this);
   }
-
   componentWillReceiveProps(nextProps) {
-    // console.log("inside will recive props ");
-    // console.log("nextprops.question", nextProps.question);
-    // console.log("this.props.question", this.props.question);
-
     if (nextProps.question === this.props.question) {
       return null;
     } else {
-      // console.log("reset new quiz");
-
       this.setState(defaultState);
     }
   }
-
   handleClick(index) {
     this.setState({ answered: true, selectedIndex: index });
     this.props.updateScore(index === this.props.correctChoice);
   }
-
   calcChoiceState(index) {
     const correct = index === this.props.correctChoice;
     if (!this.state.answered) return "active";
@@ -42,7 +33,6 @@ class Question extends Component {
       return correct ? "correct" : "disabled";
     }
   }
-
   render() {
     return (
       <div>

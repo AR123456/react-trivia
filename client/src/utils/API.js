@@ -1,7 +1,3 @@
-// const url =
-//   "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple&encode=url3986";
-//build API url
-
 const makeQuizObjs = json => {
   return json.results.map(question => {
     const q = {
@@ -34,7 +30,6 @@ export default {
       .then(res => res.json())
       .then(json => {
         console.log("this is the JSON we use to make quiz", json);
-
         const data = makeQuizObjs(json);
         return data;
       });

@@ -5,7 +5,6 @@ import quizClient from "../utils/API";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "../App.css";
 import Selection from "../components/Selection";
-// import ModalPage from "./components/Modal";
 
 class APIGame extends Component {
   constructor(props) {
@@ -32,21 +31,17 @@ class APIGame extends Component {
   tickSeconds = () => {
     if (this.state.secondsLeft === 0) {
       console.log("timer is at 0", this.state.secondsLeft);
-
-      // this.handleEndQuiz();
       this.handleClickNext();
     } else {
       this.setState({ secondsLeft: this.state.secondsLeft - 1 });
     }
   };
-
   getNewQuiz() {
     quizClient
       .getQuizes(this.state.quizCategoryID, this.state.quizDifficulty)
       .then(questions => {
         if (this.state.ticker) clearInterval(this.state.ticker);
         let ticker = setInterval(this.tickSeconds, 1000);
-
         this.setState({
           questions: questions,
           secondsLeft: 30,
@@ -57,21 +52,11 @@ class APIGame extends Component {
         });
       });
   }
-
-  componentDidMount() {
-    // this.getNewQuiz();
-  }
-
+  componentDidMount() {}
   handleClickNext() {
-    // console.log("this is the curent number", this.state.currQuestion);
-
-    //start the timer
-    // this.setState({ interval: setInterval(this.tickSeconds, 1000) });
     this.setState({ currQuestion: this.state.currQuestion + 1 });
-
     this.setState({ secondsLeft: 30 });
   }
-
   updateScore(correct) {
     this.setState({ secondsLeft: 0 });
     if (correct) this.setState({ score: this.state.score + 1 });
@@ -84,38 +69,21 @@ class APIGame extends Component {
     console.log("picked a difficulty", e.target.value);
     this.setState({ quizDifficulty: e.target.value });
   }
-
   setGameOver() {
     this.setState({ gameIsOver: true });
   }
-
   render() {
-    // console.log("this is the state", this.state);
-
     const nextQuestion =
       this.state.currQuestion < this.state.questions.length - 1;
     const question = this.state.questions[this.state.currQuestion];
     const score = this.state.score;
     const questionNumber = this.state.currQuestion + 1;
-    // console.log("question", question);
-    // console.log("question number", questionNumber);
     if (questionNumber === 10 && this.state.gameIsOver === false) {
-      // console.log("restart game now");
-      // this.setState({ currQuestion: 0 });
-      // console.log(
-      //   "this is the curentQuestion after 10 is reached",
-      //   this.state.currQuestion
-      // );
-
       clearInterval(this.state.ticker);
       this.setGameOver();
     }
     return (
       <div className="App">
-        {/* <ModalPage>
-          <h1>This is some modal text </h1>
-        </ModalPage> */}
-
         <div className="App-header">
           <Selection
             handleCategorySelected={this.handleCategorySelected}
@@ -125,7 +93,6 @@ class APIGame extends Component {
             New Trivia Game
           </button>
         </div>
-
         <h2>Countdown {this.state.secondsLeft} </h2>
         <div className="App-body">
           <Scoreboard
@@ -150,16 +117,6 @@ class APIGame extends Component {
             <div className="gameover">
               <h4>
                 {" "}
-                {/* <Selection
-                handleCategorySelected={this.handleCategorySelected}
-                handleDifficultySelected={this.handleDifficultySelected}
-              />
-              <button
-                className="btn btn-primary active"
-                onClick={this.getNewQuiz}
-              >
-                New Trivia Game
-              </button> */}
                 <button
                   className="btn btn-primary active"
                   onClick={this.getNewQuiz}

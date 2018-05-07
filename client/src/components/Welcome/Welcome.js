@@ -1,18 +1,4 @@
 import React from "react";
-// import logo from "";
-
-// handleUserDetails = event => {
-//   if (event.target.name === "name") {
-//     this.setState({ username: event.target.value });
-//   }
-//   if (event.target.name === "email") {
-//     this.setState({ useremail: event.target.value });
-//   }
-//   if (event.target.name === "password") {
-//     this.setState({ userpassword: event.target.value });
-//   }
-// };
-
 const Welcome = props => {
   return (
     <form data-toggle="validator" role="form">

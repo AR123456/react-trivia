@@ -5,7 +5,7 @@ import SourceLink from "./SourceLink";
 const Footer = () => (
   <footer className="footer">
     {/* <span> */}
-    {/* 2018 Anne Rottler <SourceLink>Github</SourceLink> </span> */}
+    {/* 2018 Anne <SourceLink>Github</SourceLink> </span> */}
   </footer>
 );
 export default Footer;
@@ -16,7 +16,7 @@ export default Footer;
 //         {/* <NavItem> */}
 //         <h6>
 //           {" "}
-//           2018 Anne Rottler <SourceLink>Github</SourceLink>
+//           2018 Anne <SourceLink>Github</SourceLink>
 //         </h6>
 //         {/* </NavItem> */}
 //       </Nav>
