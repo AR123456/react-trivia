@@ -12,7 +12,7 @@
     "classnames": "^2.2.5",
     "file-loader": "^1.1.11",
     "prop-types": "^15.6.1",
-    "react": "^15.6.1",
+    "react": "^15.6.2",
     "react-css-transition-replace": "^2.2.1",
     "react-dom": "^15.6.2",
     "react-router": "^4.2.0",
