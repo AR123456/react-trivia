@@ -15,6 +15,7 @@ class CreateGame extends Component {
     type: "multiple",
     difficulty: "medium",
     question: "",
+    questionArray: [],
     correct_answer: "",
     incorrect_answers: ["", "", ""],
     date: new Date(Date.now())
@@ -24,19 +25,20 @@ class CreateGame extends Component {
   }
   loadQuestions = () => {
     APIdb.getQuizes()
-      .then(res => this.setState({ question: res.data }))
+      .then(res => this.setState({ questionArray: res.data }))
       .catch(err => console.log(err));
   };
+
   deleteQuetion = id => {
     APIdb.deleteQuiz(id)
       .then(res => this.loadQuestions())
       .catch(err => console.log(err));
   };
   handleInputChange = event => {
-    const { question, value } = event.target;
+    const { name, value } = event.target;
     console.log("This is the handleInput state change", value);
     this.setState({
-      [question]: value
+      [name]: value
     });
   };
   handleFormSubmit = event => {
@@ -52,10 +54,10 @@ class CreateGame extends Component {
         difficulty: "medium",
         question: this.state.question,
         correct_answer: this.state.correct_answer,
-        incorrect_answers: this.state[
-          (this.state.incorrect_1,
+        incorrect_answers: [
+          this.state.incorrect_1,
           this.state.incorrect_2,
-          this.state.incorrect_3)
+          this.state.incorrect_3
         ]
       })
         .then(res => this.loadQuestions())
@@ -107,6 +109,7 @@ class CreateGame extends Component {
             <Jumbotron>
               <h2>Questions I Added</h2>
             </Jumbotron>
+
             {/* <h4>No Results to Display</h4> */}
           </Col>
         </Row>
