@@ -14,7 +14,9 @@
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn"
+    "installDeps": "yarn && cd client && yarn",
+
+    "heroku-postbuild": "node scripts/seedDB.js"
   },
   "author": "Anne",
   "license": "ISC",
