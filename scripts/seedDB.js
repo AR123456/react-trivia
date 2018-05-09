@@ -23,10 +23,9 @@ const quizSeed = [
     category: "Mine",
     type: "multiple",
     difficulty: "medium",
-    question:
-      "During muscular contraction, which section of the sarcomere does not move?",
-    correct_answer: "H-zone",
-    incorrect_answers: [" A-band", "M-line", "I-band"],
+    question: "What is the highest mountain in Colorado?",
+    correct_answer: "Mt. Elbert",
+    incorrect_answers: ["Pikes Peak", "Mt Massive", "Longs Peak"],
     date: new Date(Date.now())
   },
   {
@@ -34,9 +33,46 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      "What does the sarcoplasmic reticulum store that is significant for muscular contraction?",
-    correct_answer: "ATP",
-    incorrect_answers: ["Sodium/potassium", "Calcium ions", "Glycogen"],
+      "What Colorado city was known as 'the richest square mile on Earth'?",
+    correct_answer: "Central City",
+    incorrect_answers: ["Boulder", "Denver", "Blackhawk"],
+    date: new Date(Date.now())
+  },
+  {
+    category: "Mine",
+    type: "multiple",
+    difficulty: "medium",
+    question:
+      "In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?",
+    correct_answer: "John and Mary",
+    incorrect_answers: [
+      "William and Elizabeth",
+      "Joseph and Catherine",
+      "George and Anne"
+    ],
+    date: new Date(Date.now())
+  },
+  {
+    category: "Mine",
+    type: "multiple",
+    difficulty: "medium",
+    question: "When did the Liberty Bell get its name?",
+    correct_answer:
+      "in the 19th century, when it became a symbol of the abolition of slavery",
+    incorrect_answers: [
+      "when it was made, in 1701",
+      "when it rang on July 4, 1776",
+      "none of the above"
+    ],
+    date: new Date(Date.now())
+  },
+  {
+    category: "Mine",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What type of candy originated in Golden, Colorado?",
+    correct_answer: "Jolly Ranchers",
+    incorrect_answers: ["gold rocks bubblegum", "Wax Lips", "Dots"],
     date: new Date(Date.now())
   },
   {
@@ -58,9 +94,9 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      "Where in a muscle are essential elements of muscular contraction (i.e., glycogen, fat, mitochondria) located?",
-    correct_answer: "Sarcoplasm",
-    incorrect_answers: ["Plasma", "Sarcolemma", "Sarcoplasmic reticulum"],
+      "In the Roy Rogers -Dale Evans Museum, you will find Roy and Dales stuffed horses. Roy's horse was named Trigger, which was Dales horse?",
+    correct_answer: "Buttermilk",
+    incorrect_answers: ["Daisy", "Scout", "Tulip"],
     date: new Date(Date.now())
   },
   {
@@ -68,9 +104,13 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      "What substance is involved in muscular contraction at the neuromuscular junction?",
-    correct_answer: "Acetylcholine",
-    incorrect_answers: ["Epinephrine", "Serotonin", "Creatine phosphate"],
+      "Daniel Boon museum at the home where he died can best be described how?",
+    correct_answer: "a four-story Georgian-style home in Missouri",
+    incorrect_answers: [
+      "a log cabin in Kentucky",
+      "a two-story clapboard house in Tennessee",
+      "a three story brick house in Arkansas"
+    ],
     date: new Date(Date.now())
   },
   {
@@ -87,9 +127,9 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      "Which of the following components of mechanical load is the LEAST important for stimulating new bone formation?",
-    correct_answer: "rest period",
-    incorrect_answers: ["magnitude", "rate of loading", "nutrition"],
+      "Which of the following items was owned by the fewest U.S. homes in 1990?",
+    correct_answer: "compact disk player",
+    incorrect_answers: ["home computer", "cordless phone", "dishwasher"],
     date: new Date(Date.now())
   },
   {
@@ -97,12 +137,32 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      "When running, which of the following contributes the MOST to minimizing the braking effect of a heel foot strike?",
-    correct_answer: "concentric hip extension",
+      "Who holds the record for the most victories in a row on the professional golf tour?",
+    correct_answer: "Byron Nelson",
+    incorrect_answers: ["Jack Nicklaus", "Arnold Palmer", "Ben Hogan"],
+    date: new Date(Date.now())
+  },
+  {
+    category: "Mine",
+    type: "multiple",
+    difficulty: "medium",
+    question:
+      " During the 1980s for six consecutive years what breed of dog was the most popular in the U.S.?",
+    correct_answer: "cocker spaniel",
+    incorrect_answers: ["German shepherd", "Labrador retriever", "poodle"],
+    date: new Date(Date.now())
+  },
+  {
+    category: "Mine",
+    type: "multiple",
+    difficulty: "medium",
+    question:
+      "Before becoming George Bush's Secretary of Defense, what was Dick Cheney's position?",
+    correct_answer: "congressman from Wyomingy",
     incorrect_answers: [
-      "eccentric hip flexion",
-      "eccentric knee extension",
-      "hamstring contraction"
+      "governor of New Hampshire",
+      "secretary of defense under Ronald Reagan",
+      "hunter safety instructor "
     ],
     date: new Date(Date.now())
   },
@@ -111,37 +171,9 @@ const quizSeed = [
     type: "multiple",
     difficulty: "medium",
     question:
-      " What is the MINIMUM amount of carbohydrates that a 132-lb (60-kg) competitive Olympic triathlete should consume on a daily basis?",
-    correct_answer: "480 g",
-    incorrect_answers: ["120 g", "960 g", "60 g"],
-    date: new Date(Date.now())
-  },
-  {
-    category: "Mine",
-    type: "multiple",
-    difficulty: "medium",
-    question:
-      "An untrained college-aged athlete begins a resistance training program. After training for three weeks, her strength increases dramatically. Which of the following is the most influential factor responsible for this improvement?",
-    correct_answer: "improved neuromuscular efficiency",
-    incorrect_answers: [
-      " decreased cross-sectional area of Type I fibers",
-      " increased number of muscle fibers",
-      "improved VO2 max"
-    ],
-    date: new Date(Date.now())
-  },
-  {
-    category: "Mine",
-    type: "multiple",
-    difficulty: "medium",
-    question:
-      "Which of the following shoulder movements and planes of motion are associated with the upward movement phase of the side lateral shoulder raise exercise?",
-    correct_answer: "abduction/frontal",
-    incorrect_answers: [
-      "abduction/sagittal",
-      "flexion/transverse",
-      "flexion/sagittal"
-    ],
+      "Florence Nightingale became known as 'the Lady With the Lamp' during which war?",
+    correct_answer: "Crimean War",
+    incorrect_answers: ["American Civil War", "World War I", "World War II"],
     date: new Date(Date.now())
   }
 ];
