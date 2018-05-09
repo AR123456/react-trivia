@@ -25,14 +25,20 @@ class CreateGame extends Component {
   }
   loadQuestions = () => {
     APIdb.getQuizes()
-      .then(res => this.setState({ questionArray: res.data }))
+      .then(res => {
+        console.log("This is res", res);
+
+        this.setState({ questionArray: res });
+      })
+
       .catch(err => console.log(err));
   };
 
-  deleteQuetion = id => {
+  deleteQuiz = id => {
     APIdb.deleteQuiz(id)
       .then(res => this.loadQuestions())
       .catch(err => console.log(err));
+    console.log("This is deleteQuiz");
   };
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -65,6 +71,7 @@ class CreateGame extends Component {
       console.log("This is the handale form submit");
     }
   };
+
   render() {
     console.log("I was triggered during render");
     return (
@@ -107,10 +114,24 @@ class CreateGame extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h2>Questions I Added</h2>
+              <h2>Questions In My Database</h2>
             </Jumbotron>
-
-            {/* <h4>No Results to Display</h4> */}
+            {this.state.questionArray.length ? (
+              <List>
+                {this.state.questionArray.map(question => (
+                  <ListItem key={question._id}>
+                    <Link to={"/questions/" + question._id}>
+                      <strong>{question.question}</strong>
+                    </Link>
+                    <DeleteBtn
+                      onClick={() => this.deleteQuiz(question.question._id)}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
         </Row>
       </Container>

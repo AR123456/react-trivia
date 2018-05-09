@@ -27,7 +27,7 @@ const Navbar = props => (
           }
         >
           <Link to="/UserGame" className="nav-link">
-            Custom Game
+            My Game
           </Link>
         </li>
         <li
@@ -38,7 +38,7 @@ const Navbar = props => (
           }
         >
           <Link to="/CreateGame" className="nav-link">
-            Create a game
+            Add Questions
           </Link>
         </li>
       </ul>

@@ -14,8 +14,8 @@ export default {
     return axios.get("/api/quizzes/" + id);
   },
   // Deletes the quiz with the given id
-  deleteQuiz: function(id) {
-    return axios.delete("/api/quizzes/" + id);
+  deleteQuiz: function(quizData) {
+    return axios.delete("/api/quizzes/", quizData);
   },
   // Saves a quiz to the database
   saveQuiz: function(quizData) {
