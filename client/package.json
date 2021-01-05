@@ -7,7 +7,7 @@
     "react-scripts": "^1.0.10"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "bootstrap": "4.0.0",
     "classnames": "^2.2.5",
     "file-loader": "^1.1.11",
